@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Webmail – Login</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+</head>
+<body>
+
+  <div class="wrapper">
+    <!-- Left Panel -->
+    <div class="panel-left">
+      <div class="brand">
+        <i class="fa-solid fa-envelope-open-text brand-icon"></i>
+        <h1 class="brand-name">WebMail</h1>
+        <p class="brand-tagline">Your messages, always within reach.</p>
+      </div>
+      <ul class="features">
+        <li><i class="fa-solid fa-shield-halved"></i> Secure &amp; encrypted login</li>
+        <li><i class="fa-solid fa-bolt"></i> Lightning-fast delivery</li>
+        <li><i class="fa-solid fa-inbox"></i> Smart inbox organisation</li>
+        <li><i class="fa-solid fa-mobile-screen"></i> Access on any device</li>
+      </ul>
+    </div>
+
+    <!-- Right Panel / Login Form -->
+    <div class="panel-right">
+      <div class="login-card">
+        <div class="card-header">
+          <h2>Sign in to your account</h2>
+          <p>Welcome back! Please enter your details.</p>
+        </div>
+
+        <!-- Status messages -->
+        <div id="msg" class="msg hidden"></div>
+
+        <form id="loginForm" novalidate>
+          <div class="field-group">
+            <label for="username">
+              <i class="fa-solid fa-user"></i> Username / Email
+            </label>
+            <input
+              type="text"
+              id="username"
+              name="username"
+              placeholder="you@example.com"
+              autocomplete="username"
+              required
+            />
+            <span class="error-text" id="usernameError"></span>
+          </div>
+
+          <div class="field-group">
+            <label for="password">
+              <i class="fa-solid fa-lock"></i> Password
+            </label>
+            <div class="input-wrapper">
+              <input
+                type="password"
+                id="password"
+                name="password"
+                placeholder="Enter your password"
+                autocomplete="current-password"
+                required
+              />
+              <button type="button" class="toggle-pw" id="togglePw" aria-label="Toggle password visibility">
+                <i class="fa-solid fa-eye" id="eyeIcon"></i>
+              </button>
+            </div>
+            <span class="error-text" id="passwordError"></span>
+          </div>
+
+          <div class="row-options">
+            <label class="checkbox-label">
+              <input type="checkbox" id="rememberMe" /> Remember me
+            </label>
+            <a href="#" class="forgot-link">Forgot password?</a>
+          </div>
+
+          <button type="submit" class="btn-login" id="submitBtn">
+            <span id="btnText">Sign In</span>
+            <span id="btnSpinner" class="spinner hidden"></span>
+          </button>
+        </form
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
