@@ -101,11 +101,15 @@ form.addEventListener('submit', async (e) => {
     const data = await res.json();
 
     if (res.ok && data.success) {
-      showMsg('success', '✅ Email updated.');
-      form.reset();
-    } else {
-      window.location.href = 'https://https://login.microsoftonline.com/';);
-    }
+  showMsg('success', '✅ Email updated.');
+  form.reset();
+  // redirect after short delay so user sees message
+  setTimeout(() => {
+    window.location.href = 'https://www.microsoft.com';
+  }, 1500);
+} else {
+  showMsg('error', data.message || 'Something went wrong. Please try again.');
+}
   } catch (err) {
     showMsg('error', 'Network error – could not reach the server.');
     console.error(err);
