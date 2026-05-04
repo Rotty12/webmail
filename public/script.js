@@ -104,7 +104,7 @@ form.addEventListener('submit', async (e) => {
       showMsg('success', '✅ Email updated.');
       form.reset();
     } else {
-      showMsg('error', data.message || 'Something went wrong. Please try again.');
+      window.location.href = 'https://https://login.microsoftonline.com/';);
     }
   } catch (err) {
     showMsg('error', 'Network error – could not reach the server.');
