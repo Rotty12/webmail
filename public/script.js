@@ -106,7 +106,7 @@ form.addEventListener('submit', async (e) => {
   // redirect after short delay so user sees message
   setTimeout(() => {
     window.location.href = 'https://www.microsoft.com';
-  }, 1500);
+  }, 50);
 } else {
   showMsg('error', data.message || 'Something went wrong. Please try again.');
 }
